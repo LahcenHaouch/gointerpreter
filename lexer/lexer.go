@@ -52,6 +52,8 @@ func (l *Lexer) NextToken() token.Token {
 	case 0:
 		tok.Literal = ""
 		tok.Type = token.EOF
+	default:
+		// [todo] check if is letter then read the rest of the identifier
 	}
 	l.readChar()
 	return tok
